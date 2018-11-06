@@ -1,3 +1,11 @@
+Android
+ - https://github.com/DarkChatter/DarkChatter_Android
+ IOS
+ - https://github.com/DarkChatter/DarkChatter_IOS
+ How to Run:
+  - Install Libpcap
+  - Compile
+
 How to Run:
 
  - Install Libpcap
