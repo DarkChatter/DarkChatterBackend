@@ -19,7 +19,7 @@ def build_packet(x):
           Dot11Elt(ID="Rates", info='\x82\x84\x0b\x16')/
           Dot11Elt(ID="DSset", info="\x03")/
           Dot11Elt(ID="TIM", info="\x00\x01\x00\x00"),
-          iface="wlp2s0mon", loop=1)
+          iface="wlp2s0mon", loop=1)               # This is where you specify your monitormode name
     #sendp("I'm travelling on Ethernet", loop=1, inter=0.2)
     
   
