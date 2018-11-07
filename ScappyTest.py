@@ -7,7 +7,7 @@ import sys
 from scapy.all import *
 
 
-def build_packet(x):
+def build_packet(x, interface):
     ip=IP("HelloWOrld")
     #sendp(ip , loop=1,inter=0.2,iface="wlp2s0");
     sendp(RadioTap()/
@@ -15,17 +15,17 @@ def build_packet(x):
                 addr2="00:01:02:03:04:05",
                 addr3="00:01:02:03:04:05")/
           Dot11Beacon(cap="ESS", timestamp=1)/
-          Dot11Elt(ID="SSID", info='hellonameisRyan')/
-          Dot11Elt(ID="Rates", info='\x82\x84\x0b\x16')/
-          Dot11Elt(ID="DSset", info="\x03")/
+          Dot11Elt(ID="SSID", info=x)/                     
+          Dot11Elt(ID="Rates", info='testthisfield')/
+          Dot11Elt(ID="DSset", info="breakEverything")/
           Dot11Elt(ID="TIM", info="\x00\x01\x00\x00"),
-          iface="wlp2s0mon", loop=1)               # This is where you specify your monitormode name
+          iface=interface, loop=1)
     #sendp("I'm travelling on Ethernet", loop=1, inter=0.2)
     
   
     
 
-build_packet("x")
+build_packet("HellomynameisRyan","wlp2s0mon")
 
 
 
